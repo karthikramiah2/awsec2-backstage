@@ -22,7 +22,7 @@ jobs:
   # Job for applying the ec2 instance
   apply_ec2:
     # Use the latest Ubuntu runner
-    runs-on: ubuntu-latest
+    runs-on: Viswanathans-MacBook-Pro
     
     # Execute this step only if the action input is "apply"
     if: ${{ github.event.inputs.action == 'apply' }}
@@ -64,7 +64,7 @@ jobs:
 
   # Destroying the  ec2 instance
   destroy_instance:
-    runs-on: ubuntu-latest
+    runs-on: Viswanathans-MacBook-Pro
     
     # Execute this job only if the action input is "destroy"
     if: ${{ github.event.inputs.action == 'destroy' }}
