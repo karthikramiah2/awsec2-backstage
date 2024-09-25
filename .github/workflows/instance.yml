@@ -97,6 +97,8 @@ jobs:
       
     # Destroy all resources 
     - name: Terraform Destroy
-    #- name: terraform apply
+      env:
+        TF_VAR_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        TF_VAR_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}    
       run: terraform destroy -var instanceName=${{ github.event.inputs.instanceName }} -var awsRegion=${{ github.event.inputs.awsRegion }} -auto-approve
       working-directory: .
